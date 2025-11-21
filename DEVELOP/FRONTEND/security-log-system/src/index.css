@@ -1,0 +1,12 @@
+header nav{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button{
+
+  width: 100px;
+  height:100px ;
+  margin: 20px;
+}
