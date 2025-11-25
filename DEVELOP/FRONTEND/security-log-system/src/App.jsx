@@ -1,10 +1,9 @@
 
-import './App.css'
-
+import './assets/styles/App.css'
 
 export default function App()
 {
   return (
-    <img src="" alt="Logo" className='' />
+    <Nav />
   )
 }
