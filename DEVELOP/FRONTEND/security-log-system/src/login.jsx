@@ -1,36 +1,71 @@
 import './assets/styles/login.css'
+import { useState } from 'react'
 
-export default function Login()
-{
-    return(<>
-         <div className="Login-container">
-            <div className="Login-card">
-                <h2>Inicio de Sesión</h2>
+function InputForm({ name, inputType, value, onChange }) {
+  return (
+    <div className="input-group">
+      <label htmlFor={name}>{name}</label>
+      <input 
+        type={inputType} 
+        id={name}
+        value={value}
+        onChange={onChange}
+        required
+      />
+    </div>
+  )
+}
 
-                <form>
+export default function Login() {
 
-                    {/* CAMPO USUARIO */}
-                    <div className="input-group">
-                        <label htmlFor="usuario">Usuario</label>
-                        <input type="text" id="usuario" required
-                        />
-                    </div>
+  const [values, setValues] = useState({
+    user: "",
+    password: ""
+  });
 
-                    {/* CAMPO CONTRASEÑA*/}
-                    <div className="input-group">
-                        <label htmlFor="contraseña">Contraseña</label>
-                        <input type="password" id="password" required/>
-                    </div>
+  function handleChange(e) {
+    const { id, value } = e.target;
 
-                    {/* BOTON INICIAR SESIÓN */}
-                    <button type="submit" className="login-button"> Iniciar sesión</button>
+    // actualiza la información necesaria
+    setValues(prev => ({
+      ...prev,
+      [id]: value
+    }));
 
-                    {/* BOTON OLVIDO CONTRSEÑA */}
-                    <p className="forgot-password">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
-                    </p>
-                </form>
-            </div>
-         </div>
-    </>)
+    console.log(values); // ver cambios en consola
+  }
+
+  return (
+    <div className="Login-container">
+      <div className="Login-card">
+        <h2>Inicio de Sesión</h2>
+
+        <form>
+          {/* CAMPO USUARIO */}
+          <InputForm 
+            name="user"
+            inputType="text"
+            value={values.user}
+            onChange={handleChange}
+          />
+
+          {/* CAMPO CONTRASEÑA */}
+          <InputForm 
+            name="password"
+            inputType="password"
+            value={values.password}
+            onChange={handleChange}
+          />
+
+          {/* BOTON INICIAR SESIÓN */}
+          <button type="submit" className="login-button">Iniciar sesión</button>
+
+          {/* BOTON OLVIDO CONTRASEÑA */}
+          <p className="forgot-password">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  )
 }
