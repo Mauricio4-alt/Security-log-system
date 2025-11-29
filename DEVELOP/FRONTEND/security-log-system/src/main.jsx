@@ -11,9 +11,9 @@ ReactDOM.createRoot(root).render(
     
     <Routes>
       <Route path="/"  element={<Login/>}/>  
-      <Route path="/security"  >
-        <MyAppNav/>
+      <Route path="/security" element={<MyAppNav/>} >
         <Route path="registro-ingreso"  element={<Ingreso/>}/>  
+        
     </Route>
 
     </Routes>
