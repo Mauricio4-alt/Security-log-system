@@ -38,12 +38,12 @@ export default function Login() {
   return (
     <div className="Login-container">
       <div className="Login-card">
-        <h2>Inicio de Sesión</h2>
+        <h2>BIENVENIDO</h2>
 
         <form>
           {/* CAMPO USUARIO */}
           <InputForm 
-            name="user"
+            name="Usuario"
             inputType="text"
             value={values.user}
             onChange={handleChange}
@@ -51,7 +51,7 @@ export default function Login() {
 
           {/* CAMPO CONTRASEÑA */}
           <InputForm 
-            name="password"
+            name="Contraseña"
             inputType="password"
             value={values.password}
             onChange={handleChange}

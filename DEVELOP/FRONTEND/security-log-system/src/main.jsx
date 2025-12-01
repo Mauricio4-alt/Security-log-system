@@ -5,8 +5,8 @@ import './assets/styles/index.css'
 
 import MyAppNav from "./nav";
 import Login from "./login";
-import Ingreso from "./Ingreso";       // <-- IMPORTANTE
-import SecurityLayout from "./security-layout";
+import Ingreso from "./registroEquipos";       // <-- IMPORTANTE
+import SecurityLayout from "./layout";
 
 const root = document.getElementById("root");
 
