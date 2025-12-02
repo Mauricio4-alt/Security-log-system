@@ -1,6 +1,6 @@
 export function InputForm({ name, inputType, value, onChange }) {
   return (
-    <>
+    <div className="input-group">
       <label htmlFor={name}>{name}</label>
       <input 
         type={inputType} 
@@ -9,6 +9,6 @@ export function InputForm({ name, inputType, value, onChange }) {
         onChange={onChange}
         required
       />
-    </>
+    </div>
   )
 }
