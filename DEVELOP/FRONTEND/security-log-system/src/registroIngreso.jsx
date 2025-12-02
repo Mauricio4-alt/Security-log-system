@@ -1,4 +1,4 @@
-import { InputForm } from "./Tools/componentsTools";
+import { InputForm,SelectItems } from "./Tools/componentsTools";
 import { useState } from "react";
 
 export default function Registrar() {
