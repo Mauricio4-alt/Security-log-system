@@ -1,15 +1,19 @@
-import { NavLink } from "react-router";
-import './assets/styles/nav.css'
-import { GoChecklist, GoListOrdered, GoSearch, GoHistory } from 'react-icons/go';
-export default function MyAppNav() {
-  
-   
 
-    return (
-    <nav className=".barra-n">
-      <NavLink to="/" end>Login</NavLink>
-      <NavLink to="/registros">Account</NavLink>
-      <NavLink to="/admin">All Concerts</NavLink>
-    </nav>
+import { Outlet, Link } from "react-router-dom";
+
+export default function MyAppNav() {
+  return (
+    <div>
+      <nav>
+        <Link to="/">Ingreso de sesión</Link>
+        <Link to="/security/">Otro</Link>
+        <Link to="/security/registro-ingreso">Registro ingreso</Link>
+      </nav>
+      
+     
+
+      <Outlet />
+    </div>
+
   );
 }
