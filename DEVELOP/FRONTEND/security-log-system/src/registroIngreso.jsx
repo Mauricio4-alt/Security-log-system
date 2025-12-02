@@ -41,37 +41,37 @@ export default function Registrar() {
             />
 
             <InputForm
-                name="nombres"   // ← corregido
+                name="nombres"   
                 inputType="text"
                 value={information.nombres}
                 onChange={onHandleChange}
             />
             <InputForm
-                name="apellidos"   // ← corregido
+                name="apellidos"   
                 inputType="text"
                 value={information.apellidos}
                 onChange={onHandleChange}
             />
             <InputForm
-                name="tipoEquipo"   // ← corregido
+                name="tipoEquipo"   
                 inputType="text"
                 value={information.tipoEquipo}
                 onChange={onHandleChange}
             />
             <InputForm
-                name="marcaEquipo"   // ← corregido
+                name="marcaEquipo"   
                 inputType="text"
                 value={information.marcaEquipo}
                 onChange={onHandleChange}
             />
             <InputForm
-                name="color"   // ← corregido
+                name="color"   
                 inputType="text"
                 value={information.color}
                 onChange={onHandleChange}
             />
             <InputForm
-                name="serial"   // ← corregido
+                name="serial"   
                 inputType="text"
                 value={information.serial}
                 onChange={onHandleChange}
