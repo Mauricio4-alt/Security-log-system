@@ -1,1 +1,1 @@
-[Diagrama Casos de Uso](https://fureeedi.github.io/DiagramaCasosDeUso/)
+[Diagrama Casos de Uso S.L.S](https://fureeedi.github.io/DiagramaCasosDeUso/)
