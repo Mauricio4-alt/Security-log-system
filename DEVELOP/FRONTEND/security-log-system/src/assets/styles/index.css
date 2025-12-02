@@ -3,7 +3,9 @@ body{
   background-color: #2271b3;
 
 }
-
+h1,h2{
+  text-align: center;
+}
 
 .barra-n{
   display: flex;

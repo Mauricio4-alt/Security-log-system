@@ -1,16 +1,17 @@
-import { NavLink } from "react-router";
+import { Outlet, Link } from "react-router-dom";
 
 export default function MyAppNav() {
-  
-   
-
-    return (
-    <nav className=".barra-n">
-    
+  return (
+    <div>
+      <nav>
+        <Link to="/">Ingreso de sesión</Link>
+        <Link to="/security/">Otro</Link>
+        <Link to="/security/registro-ingreso">Registro ingreso</Link>
+      </nav>
       
-      <NavLink to="/" end>Login</NavLink>
-      <NavLink to="/registros">Account</NavLink>
-      <NavLink to="/admin">All Concerts</NavLink>
-    </nav>
+     
+
+      <Outlet />
+    </div>
   );
 }
