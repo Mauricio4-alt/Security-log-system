@@ -7,13 +7,12 @@ import './assets/styles/index.css'
 import MyAppNav from "./nav";
 import Login from "./login";
 import Ingreso from "./registroEquipos";       // <-- IMPORTANTE
-
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './assets/styles/index.css';
-import MyAppNav from "./nav";
-import Login from "./login";
-import Registrar from "./registroIngreso";
+
+
+
+
+
 
 
 const root = document.getElementById("root");

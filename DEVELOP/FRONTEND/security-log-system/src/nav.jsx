@@ -9,11 +9,11 @@ export default function MyAppNav() {
         <Link to="/security/">Otro</Link>
         <Link to="/security/registro-ingreso">Registro ingreso</Link>
       </nav>
+      <Outlet />
+    </div>
+    );
+  }
       
      
 
-      <Outlet />
-    </div>
 
-  );
-}
