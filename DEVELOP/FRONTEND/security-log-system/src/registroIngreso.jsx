@@ -12,7 +12,7 @@ export default function Registrar() {
         color: "",
         serial: ""
     });
-
+    const listOptions =[]
     function onHandleChange(e) {
         const { name, value } = e.target;
 

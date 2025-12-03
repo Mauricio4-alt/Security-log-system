@@ -1,7 +1,7 @@
 import './assets/styles/login.css'
 import { useState } from 'react'
 import { InputForm } from './Tools/componentsTools';
-
+import { Link } from 'react-router';
 export default function Login() {
 
   const [values, setValues] = useState({
@@ -48,7 +48,7 @@ export default function Login() {
 
           {/* BOTON OLVIDO CONTRASEÑA */}
           <p className="forgot-password">
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <Link to="/recuperar-contraseña">¿olvidó la contraseña</Link>
           </p>
         </form>
       </div>
