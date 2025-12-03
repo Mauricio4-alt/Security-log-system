@@ -1,113 +1,97 @@
 :root {
-  --blue-dark: #003366;    /* Azul oscuro para títulos/fondo */
-  --blue-medium: #007bff;  /* Azul brillante para botones principales */
-  --blue-light: #e6f0ff;   /* Azul muy claro para fondo de formulario */
-  --blue-border: #99bde6;  /* Azul intermedio para bordes */
+  --blue-dark: #003366;
+  --blue-medium: #007bff;
+  --blue-light: #e6f0ff;
+  --blue-border: #99bde6;
   --text-color: #333;
   --white: #ffffff;
 }
 
-/* --- Contenedor General --- */
+/* Contenedor del formulario */
 .form-container {
   width: 550px;
   margin: 40px auto;
   padding: 30px;
-  background-color: white; 
-  border: 1px solid #99bde6;
+  background-color: white;
+  border: 1px solid var(--blue-border);
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Título --- */
+/* Título */
 .form-title {
   font-family: sans-serif;
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
   padding: 10px 20px;
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin: 15px auto 25px;
+  background-color: var(--blue-dark);
   color: white;
-  background-color: blue;
   border-radius: 10px;
-  display: inline-block; /* Para que el fondo solo cubra el texto */
-  margin-left: 50%;
-  transform: translateX(-50%);
+  display: inline-block;
 }
 
-/* --- Diseño de Grid (Escritorio/Tablet) --- */
+/* Grid de inputs */
 .form-grid {
-    padding-bottom: 2%;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+  padding-bottom: 2%;
 }
 
+/* Grupo de inputs */
+.input-group,
 .form-column {
   display: flex;
   flex-direction: column;
 }
 
+/* Etiquetas */
 label {
   font-family: sans-serif;
-  display: center;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 5px;
   font-weight: 500;
-  color: darkblue;
+  color: var(--blue-dark);
 }
 
-.form-input, .form-select {
+/* Inputs y selects */
+.form-input {
   width: 100%;
-  padding: 10px;;
-  border: 1px solid blue;
+  padding: 10px;
   background-color: white;
-  box-sizing: border-box; /* Importante para el padding */
-  font-size: 1rem;
-  color: rgb(121, 121, 121);
-  /* Estilo para parecerse al wireframe */
-  border: 1px solid; 
+  border: 1px solid var(--blue-border);
   border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #555;
 }
 
+/* Select personalizado */
+.form-input select,
 .form-select {
-  /* Apariencia personalizada para select en el wireframe */
   appearance: none;
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 20px; /* Espacio para el icono de la flecha */
+  padding-right: 20px;
 }
 
-/* --- Sección de Botones --- */
+/* Sección de botones */
 .form-actions {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   gap: 15px;
-  margin-top: 10px;
-  padding-top: 20px;
-  /* borde simple en la parte superior para separarlos visualmente si es necesario */
-  /* border-top: 1px solid var(--blue-border); */
+  margin-top: 20px;
 }
 
 .btn {
   padding: 10px 20px;
-  border: 1px solid #ffffff; /* Borde negro como en el wireframe */
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.2s, color 0.2s;
+  border: none;
 }
 
-/* Estilos de botones por función */
-.btn-secondary { /* Cancelar */
-  background-color: rgb(75, 75, 75);
-  color: white
-}
-
-.btn-primary { /* Añadir otro equipo */
-  background-color: #2271b3;
-  color: white;
-}
-
-.btn-success { /* Guardar registro */
+.btn-success {
   background-color: green;
   color: white;
 }
@@ -116,41 +100,31 @@ label {
   opacity: 0.9;
 }
 
-/* --- Media Queries (Responsividad) --- */
-
-/* Se aplica a pantallas más pequeñas que 768px (móviles y tablets pequeñas) */
+/* Responsivo */
 @media (max-width: 768px) {
   .form-container {
-    margin: 20px;
-    padding: 20px;
-  }
-  
-  /* Cambiamos el grid a una sola columna */
-  .form-grid {
-    grid-template-columns: 1fr; 
-    gap: 10px;
+    width: 90%;
   }
 
-  /* Ajusta el tamaño de la fuente para el título */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
   .form-title {
     font-size: 1.5rem;
   }
-  
-  /* Centrar los botones y que ocupen todo el ancho si es necesario */
+
   .form-actions {
     justify-content: center;
-    flex-wrap: wrap; /* Permite que los botones salten de línea */
-    gap: 10px;
   }
 }
 
-/* Se aplica a pantallas muy pequeñas (móviles) */
 @media (max-width: 480px) {
-    .btn {
-        width: 100%; /* Botones ocupan todo el ancho en móviles */
-        padding: 12px 0;
-    }
-    .form-actions {
-        flex-direction: column;
-    }
+  .btn {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
 }
