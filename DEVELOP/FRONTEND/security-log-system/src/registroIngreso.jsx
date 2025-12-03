@@ -23,61 +23,74 @@ export default function Registrar() {
         }));
     }
 
-    return (
-        <form>
-            <h2>Registro Equipo</h2>
+   return( <form className="form-container">
+    <h2 className="form-title">Registro Equipo</h2>
 
-            <InputForm
-                name="nDocumento"
-                inputType="text"
-                value={information.nDocumento}
-                onChange={onHandleChange}
-            />
+    <div className="form-grid">
 
-           <SelectItems
-           name="Tipo de documento"
-           id="tipoDocumento"
-           listOptions={listDocuments}
-           />
+        <InputForm
+            name="nDocumento"
+            inputType="text"
+            value={information.nDocumento}
+            onChange={onHandleChange}
+        />
 
-            <InputForm
-                name="nombres"   
-                inputType="text"
-                value={information.nombres}
-                onChange={onHandleChange}
-            />
-            <InputForm
-                name="apellidos"   
-                inputType="text"
-                value={information.apellidos}
-                onChange={onHandleChange}
-            />
-            <SelectItems
-           name="Tipo de equipo"
-           id="tipoEquipo"
-           listOptions={listTypesPc}
-           />
-            <InputForm
-                name="marcaEquipo"   
-                inputType="text"
-                value={information.marcaEquipo}
-                onChange={onHandleChange}
-            />
-            <InputForm
-                name="color"   
-                inputType="text"
-                value={information.color}
-                onChange={onHandleChange}
-            />
-            <InputForm
-                name="serial"   
-                inputType="text"
-                value={information.serial}
-                onChange={onHandleChange}
-            />
-            <button type="submit"
-            onClick={()=>console.log(information)}
-            />
-        </form>
-    );
+        <SelectItems
+            name="Tipo de documento"
+            id="tipoDocumento"
+            listOptions={listDocuments}
+        />
+
+        <InputForm
+            name="nombres"
+            inputType="text"
+            value={information.nombres}
+            onChange={onHandleChange}
+        />
+
+        <InputForm
+            name="apellidos"
+            inputType="text"
+            value={information.apellidos}
+            onChange={onHandleChange}
+        />
+
+        <SelectItems
+            name="Tipo de equipo"
+            id="tipoEquipo"
+            listOptions={listTypesPc}
+        />
+
+        <InputForm
+            name="marcaEquipo"
+            inputType="text"
+            value={information.marcaEquipo}
+            onChange={onHandleChange}
+        />
+
+        <InputForm
+            name="color"
+            inputType="text"
+            value={information.color}
+            onChange={onHandleChange}
+        />
+
+        <InputForm
+            name="serial"
+            inputType="text"
+            value={information.serial}
+            onChange={onHandleChange}
+        />
+
+    </div>
+
+    <div className="form-actions">
+        <button type="submit" className="btn btn-success"
+            onClick={() => console.log(information)}
+        >
+            Guardar
+        </button>
+    </div>
+</form>)
+
 }
