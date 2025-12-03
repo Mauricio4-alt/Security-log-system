@@ -1,6 +1,6 @@
 import { InputForm,SelectItems } from "./Tools/componentsTools";
 import { useState } from "react";
-
+import './assets/styles/ingreso.css'
 export default function Registrar() {
     const [information, setInformation] = useState({
         nDocumento: "",
@@ -12,7 +12,8 @@ export default function Registrar() {
         color: "",
         serial: ""
     });
-    const listOptions =[]
+    const listDocuments =["","cc","ti","ce","te","pasaporte","pep","ppt"]
+    const listTypesPc =["","hp","lenovo","del","asus","huawei","apple",]
     function onHandleChange(e) {
         const { name, value } = e.target;
 
@@ -33,12 +34,11 @@ export default function Registrar() {
                 onChange={onHandleChange}
             />
 
-            <InputForm
-                name="tDocumento"
-                inputType="text"
-                value={information.tDocumento}
-                onChange={onHandleChange}
-            />
+           <SelectItems
+           name="Tipo de documento"
+           id="tipoDocumento"
+           listOptions={listDocuments}
+           />
 
             <InputForm
                 name="nombres"   
@@ -52,12 +52,11 @@ export default function Registrar() {
                 value={information.apellidos}
                 onChange={onHandleChange}
             />
-            <InputForm
-                name="tipoEquipo"   
-                inputType="text"
-                value={information.tipoEquipo}
-                onChange={onHandleChange}
-            />
+            <SelectItems
+           name="Tipo de equipo"
+           id="tipoEquipo"
+           listOptions={listTypesPc}
+           />
             <InputForm
                 name="marcaEquipo"   
                 inputType="text"

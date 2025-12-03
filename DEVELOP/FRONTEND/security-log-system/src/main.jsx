@@ -6,7 +6,7 @@ import './assets/styles/index.css'
 
 import MyAppNav from "./nav";
 import Login from "./login";
-import Ingreso from "./registroEquipos";       // <-- IMPORTANTE
+import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import './assets/styles/index.css';
 
 
@@ -26,7 +26,7 @@ ReactDOM.createRoot(root).render(
       <Route path="/" element={<Login />} />  
 
       <Route path="/security" element={<MyAppNav />} >
-        <Route path="registro-ingreso" element={<Ingreso />} />  
+        <Route path="registro-ingreso" element={<Registrar />} />  
         <Route path="historial"  />  
       </Route>
 
