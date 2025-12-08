@@ -18,8 +18,7 @@ ReactDOM.createRoot(root).render(
       <Route path="/" element={<Login />} />  
 
       <Route path="/security" element={<MyAppNav />} >
-        <Route path="registro-ingreso" element={<Registrar />} />  
-        <Route path="historial"  />  
+        <Route path="registro-ingreso" element={<Registrar />} /> 
       </Route>
 
     </Routes>
