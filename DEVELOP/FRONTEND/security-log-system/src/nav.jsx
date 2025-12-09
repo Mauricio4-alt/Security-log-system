@@ -150,7 +150,7 @@ export default function MyAppNav() {
         </div>
       </nav>
       <main className="p-40 max-w-7xl mx-auto"> 
-        {/* Contenedor para el contenido principal con margen superior */}
+        {/* Contenedor para el contenido principal del mensaje principal*/}
         <div className="mt-8">
             <Outlet /> 
         </div>

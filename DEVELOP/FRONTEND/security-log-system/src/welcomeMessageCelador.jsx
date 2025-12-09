@@ -3,8 +3,7 @@ import './assets/styles/index.css'
 
 export default function WelcomeMessage() {
     return (
-        <div className="p-6 md:p-10 max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border-2 border-indigo-600/50">
-            {/* Se elimina la etiqueta del icono y se ajusta el contenedor principal */}
+        <div className="p-6 md:p-10 max-w-3xl mx-auto bg-white rounded-xl shadow-2xl border-2 border-indigo-600/50">
             <div className='text-center'>
                 
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
