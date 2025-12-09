@@ -26,18 +26,14 @@ const X = (props) => (
 // === Componente de Enlace del Menú Lateral (Simula el componente Link) ===
 // Utiliza un 'to' prop para simular la navegación de react-router-dom
 const MenuItem = ({ icon: Icon, title, to, onClick }) => (
-  // Se usa 'a' en lugar de 'Link' y 'href' en lugar de 'to' por la limitación de archivo único
-  <a
-    href={to} 
-    onClick={(e) => {
-        e.preventDefault(); // Evita la navegación real en este entorno
-        console.log(`Simulando navegación a: ${to}`);
-        onClick(); // Cierra el menú
-    }}
+
+  <Link
+    to={to} 
+    onClick={onClick} // Esta función sigue siendo para cerrar el menú
     className="flex items-center w-full bg-white rounded-lg shadow-md overflow-hidden mb-4
                border border-gray-200 transition duration-150 hover:bg-gray-50"
   >
-    {/* Área del icono (imitando el bloque gris del wireframe) */}
+    {/* Área del icono */}
     <div className="flex items-center justify-center p-4 w-1/4 bg-gray-200 text-gray-700 h-full">
       <Icon className="w-8 h-8 md:w-10 md:h-10" />
     </div>
@@ -46,7 +42,7 @@ const MenuItem = ({ icon: Icon, title, to, onClick }) => (
     <div className="w-3/4 p-4 text-left font-semibold text-gray-800 uppercase text-sm leading-tight">
       {title}
     </div>
-  </a>
+  </Link>
 );
 
 export default function MyAppNav() {
@@ -56,10 +52,10 @@ export default function MyAppNav() {
   // Los ítems del menú reflejan las opciones del wireframe
   // y utilizan las rutas de ejemplo que proporcionaste.
   const menuItems = [
-    { id: 1, icon: ClipboardPlus, title: 'Registrar Ingreso de Equipo', to: '/security/registro-ingreso' },
-    { id: 2, icon: ListChecks, title: 'Lista de Registros', to: '/security/lista-registros' },
-    { id: 3, icon: Search, title: 'Consultar Registro de un Equipo', to: '/security/consultar-registro' },
-    { id: 4, icon: Clock, title: 'Historial de Entradas y Salidas', to: '/security/historial' },
+    { id: 1, icon: ClipboardPlus, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
+    { id: 2, icon: ListChecks, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
+    { id: 3, icon: Search, title: 'Consultar Registro de un Equipo', Link, to: '/security/consultar-registro' },
+    { id: 4, icon: Clock, title: 'Historial de Entradas y Salidas', Link, to: '/security/historial' },
   ];
 
   const toggleMenu = () => {
