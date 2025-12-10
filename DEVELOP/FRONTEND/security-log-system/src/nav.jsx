@@ -2,40 +2,38 @@ import './assets/styles/index.css'
 import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-const ClipboardPlus = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M15 2H9a1 1 0 0 0-1 1v1h8V3a1 1 0 0 0-1-1z"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>
-);
-
-const ListChecks = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10h11"/><path d="M3 6h11"/><path d="M3 14h11"/><path d="M16 4l2 2l4-4"/><path d="M16 10l2 2l4-4"/><path d="M16 16l2 2l4-4"/></svg>
-);
-
-const Search = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-);
-
-const Clock = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-);
-
-const X = (props) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-);
+const ICON_URLS = {
+    // Menú Lateral (URLs de Placeholders en lugar de SVG)
+    registro: 'https://cdn-icons-png.flaticon.com/512/2921/2921226.png',     // Registrar Ingreso
+    lista: 'https://cdn-icons-png.flaticon.com/512/2921/2921322.png',       // Lista de Registros
+    consulta: 'https://cdn-icons-png.flaticon.com/512/2921/2921279.png',   // Consultar Registro
+    historial: 'https://cdn-icons-png.flaticon.com/512/2921/2921317.png',    // Historial
+    // Icono para cerrar el menú (X) - Se mantiene como SVG para la UI
+    close: (props) => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    ),
+};
 
 
-// === Componente de Enlace del Menú Lateral (Simula el componente Link) ===
-// Utiliza un 'to' prop para simular la navegación de react-router-dom
-const MenuItem = ({ icon: Icon, title, to, onClick }) => (
-
+// === Componente de Enlace del Menú Lateral (Ahora usa URL de imagen) ===
+// Define la estructura de cada opción del menú
+// Se modificó para recibir 'iconUrl' en lugar de 'icon: Icon'
+const MenuItem = ({ iconUrl, title, to, onClick }) => (
   <Link
-    to={to} 
-    onClick={onClick} // Esta función sigue siendo para cerrar el menú
+    to={to}
+    onClick={onClick}
     className="flex items-center w-full bg-white rounded-lg shadow-md overflow-hidden mb-4
                border border-gray-200 transition duration-150 hover:bg-gray-50"
   >
-    {/* Área del icono */}
-    <div className="flex items-center justify-center p-4 w-1/4 bg-gray-200 text-gray-700 h-full">
-      <Icon className="w-8 h-8 md:w-10 md:h-10" />
+    {/* Área del icono (imitando el bloque gris del wireframe) */}
+    <div className="flex items-center justify-center p-4 w-1/4 bg-gray-200 h-full">
+      <img
+        src={iconUrl}
+        alt={`Icono de ${title}`}
+        className="w-12 h-12 md:w-12 md:h-12 rounded-md"
+        // Manejo de error de carga de imagen
+        onError={(e) => { e.target.onerror = null; e.target.src=ICON_URLS.errorFallback; e.target.alt="Error de Carga"; }} 
+      />
     </div>
     
     {/* Área del texto */}
@@ -45,18 +43,16 @@ const MenuItem = ({ icon: Icon, title, to, onClick }) => (
   </Link>
 );
 
-
 export default function MyAppNav() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // Los ítems del menú reflejan las opciones del wireframe
-  // y utilizan las rutas de ejemplo que proporcionaste.
+  // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
-    { id: 1, icon: ClipboardPlus, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
-    { id: 2, icon: ListChecks, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
-    { id: 3, icon: Search, title: 'Consultar Registro de un Equipo', Link, to: '/security/consultar-registro' },
-    { id: 4, icon: Clock, title: 'Historial de Entradas y Salidas', Link, to: '/security/historial' },
+    { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
+    { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', route: '/lista-registros' },
+    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', route: '/consultar-registro' },
+    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', route: '/historial' },
   ];
 
   const toggleMenu = () => {
@@ -68,11 +64,13 @@ export default function MyAppNav() {
     setIsMenuOpen(false);
   };
 
+  // 3. Obtenemos el componente SVG de cerrar para usarlo directamente
+  const CloseIcon = ICON_URLS.close;
+
   return (
     <div className="min-h-screen bg-gray-50">
       
       {/* 1. Barra de Navegación Superior (Fixed Header) */}
-      {/* Se mantiene la estructura visual del wireframe (MENU, Título, Cerrar Sesión) */}
       <header className="fixed top-0 left-0 w-full bg-white shadow-lg z-20 border-b border-gray-200 p-3 md:p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
@@ -90,16 +88,11 @@ export default function MyAppNav() {
             SECURITY LOG SYSTEM
           </h1>
 
-          {/* Botón Cerrar Sesión (simulado como Link to="/")) */}
-          {/* Se usa el primer Link de tu esqueleto: Ingreso de sesión */}
+          {/* Botón Cerrar Sesión (simulado) */}
           <a
-            href="/"
-            onClick={(e) => {
-                e.preventDefault(); 
-                console.log("Simulando Link to: /");
-            }}
+            href="/cerrar-sesion"
             className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
-            aria-label="Cerrar Sesión (Simulado)"
+            aria-label="Cerrar Sesión"
           >
             Cerrar Sesión
           </a>
@@ -132,18 +125,19 @@ export default function MyAppNav() {
             className="p-2 text-gray-600 hover:text-gray-900 rounded-full hover:bg-gray-200 transition"
             aria-label="Cerrar Menú"
           >
-            <X className="w-6 h-6" />
+            <CloseIcon className="w-6 h-6" />
           </button>
         </div>
 
-        {/* Opciones del Menú (Usando el componente MenuItem para simular Link) */}
+        {/* Opciones del Menú */}
         <div className="space-y-4">
           {menuItems.map(item => (
             <MenuItem 
               key={item.id}
-              icon={item.icon}
+              // Se pasa la URL, no el componente
+              iconUrl={item.iconUrl}
               title={item.title}
-              to={item.to} // Usamos 'to' para simular la prop de Link
+              to={item.to}
               onClick={handleLinkClick}
             />
           ))}
