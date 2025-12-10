@@ -25,7 +25,7 @@ const X = (props) => (
 
 // === Componente de Enlace del Menú Lateral (Simula el componente Link) ===
 // Utiliza un 'to' prop para simular la navegación de react-router-dom
-const MenuItem = ({ icon: Icon, title, to, onClick }) => (
+const MenuItem = ({ icon: title, to, onClick }) => (
 
   <Link
     to={to} 

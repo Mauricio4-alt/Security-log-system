@@ -16,13 +16,15 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
 
     <Routes>
-      <Route path="/" element={<Login />} />  
+      <Route path="/" element={<Login />} >  
 
-      <Route path="/security" element={<MyAppNav />} >
-        <Route index element={<WelcomeMessage />} />
-        <Route path="registro-ingreso" element={<Registrar />} /> 
+        <Route path="/security" element={<MyAppNav />} >
+          <Route index element={<WelcomeMessage />} />
+          <Route path="registro-ingreso" element={<Registrar />} /> 
+        </Route>
+
+        
       </Route>
-
     </Routes>
 
   </BrowserRouter>
