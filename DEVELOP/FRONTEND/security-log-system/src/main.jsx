@@ -9,6 +9,7 @@ import WelcomeMessage from "./welcomeMessageCelador";
 import Login from "./login";
 import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import './assets/styles/index.css';
+import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 
 const root = document.getElementById("root");
 
@@ -25,6 +26,11 @@ ReactDOM.createRoot(root).render(
 
         
       </Route>
+
+      <Route path="/admin">
+        <Route index element={<WelcomeMessageAdmin/>} />
+      </Route>
+
     </Routes>
 
   </BrowserRouter>
