@@ -10,6 +10,7 @@ import Login from "./login";
 import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import './assets/styles/index.css';
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
+import MyAppNavAdmin from "./navAdmin";
 
 const root = document.getElementById("root");
 
@@ -27,7 +28,7 @@ ReactDOM.createRoot(root).render(
         
       </Route>
 
-      <Route path="/admin">
+      <Route path="/admin" element={<MyAppNavAdmin />}>
         <Route index element={<WelcomeMessageAdmin/>} />
       </Route>
 
