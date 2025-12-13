@@ -52,9 +52,9 @@ export default function MyAppNav() {
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
     { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
-    { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', route: '/lista-registros' },
-    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', route: '/consultar-registro' },
-    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', route: '/historial' },
+    { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
+    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/consultar-registro' },
+    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/historial' },
   ];
 
   const toggleMenu = () => {
@@ -145,9 +145,9 @@ export default function MyAppNav() {
           ))}
         </div>
       </nav>
-      <main className="p-40 max-w-7xl mx-auto"> 
+      <main > 
         {/* Contenedor para el contenido principal del mensaje principal*/}
-        <div className="mt-8">
+        <div className="mt-20">
             <Outlet /> 
         </div>
       </main>      

@@ -7,6 +7,7 @@ import './assets/styles/index.css'
 import MyAppNav from "./nav";
 import WelcomeMessage from "./welcomeMessageCelador";
 import Login from "./login";
+import ListaRegistros from "./listaRegistros";
 import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 import MyAppNavAdmin from "./navAdmin";
@@ -24,6 +25,7 @@ ReactDOM.createRoot(root).render(
       <Route path="/security" element={<MyAppNav />} >
         <Route index element={<WelcomeMessage />} />
         <Route path="registro-ingreso" element={<Registrar />} />
+        <Route path="lista-registros" element={<ListaRegistros />} />
       </Route>
 
       {/* RUTAS ADMIN */}

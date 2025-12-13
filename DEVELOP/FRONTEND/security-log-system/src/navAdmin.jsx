@@ -13,12 +13,6 @@ const ICON_URLS = {
     ),
 };
 
-
-
-
-// === Componente de Enlace del Menú Lateral (Ahora usa URL de imagen) ===
-// Define la estructura de cada opción del menú
-// Se modificó para recibir 'iconUrl' en lugar de 'icon: Icon'
 const MenuItem = ({ iconUrl, title, to, onClick }) => (
   <Link
     to={to}
