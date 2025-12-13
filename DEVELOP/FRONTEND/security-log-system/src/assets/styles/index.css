@@ -1,27 +1,2 @@
-body{
- 
-  background-color: #2271b3;
-
-}
-h1,h2{
-  text-align: center;
-}
-
-.barra-n{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border: 1px solid black;
-  gap: 100px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  
-}
-
-.nav-boton{
-  color:#F5F1DC;
-  background-color: #001BB7;
-
-}
+@import "tailwindcss";
+@tailwind utilities;

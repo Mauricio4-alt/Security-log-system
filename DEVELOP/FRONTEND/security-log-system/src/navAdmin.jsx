@@ -4,22 +4,15 @@ import { Outlet, Link } from "react-router-dom";
 
 const ICON_URLS = {
     // Menú Lateral (URLs de Placeholders en lugar de SVG)
-    registro: 'https://cdn-icons-png.flaticon.com/512/2921/2921226.png',     // Registrar Ingreso
-    lista: 'https://cdn-icons-png.flaticon.com/512/2921/2921322.png',       // Lista de Registros
-    consulta: 'https://cdn-icons-png.flaticon.com/512/2921/2921279.png',   // Consultar Registro
-    historial: 'https://cdn-icons-png.flaticon.com/512/2921/2921317.png',    // Historial
+    registrosCeladores: 'https://cdn-icons-png.flaticon.com/512/2921/2921788.png',     // Registrar Ingreso
+    gestionCuentas: 'https://cdn-icons-png.flaticon.com/512/5510/5510047.png',       // Lista de Registros
+
     // Icono para cerrar el menú (X) - Se mantiene como SVG para la UI
     close: () => (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     ),
 };
 
-
-
-
-// === Componente de Enlace del Menú Lateral (Ahora usa URL de imagen) ===
-// Define la estructura de cada opción del menú
-// Se modificó para recibir 'iconUrl' en lugar de 'icon: Icon'
 const MenuItem = ({ iconUrl, title, to, onClick }) => (
   <Link
     to={to}
@@ -45,16 +38,14 @@ const MenuItem = ({ iconUrl, title, to, onClick }) => (
   </Link>
 );
 
-export default function MyAppNav() {
+export default function MyAppNavAdmin() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
-    { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
-    { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
-    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/consultar-registro' },
-    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/historial' },
+    { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Celadores', Link ,to: '/admin' },
+    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Celadores', Link ,to: '/admin' },
   ];
 
   const toggleMenu = () => {
@@ -145,14 +136,12 @@ export default function MyAppNav() {
           ))}
         </div>
       </nav>
-      <main > 
+      <main className="p-40 max-w-7xl mx-auto"> 
         {/* Contenedor para el contenido principal del mensaje principal*/}
-        <div className="mt-20">
+        <div className="mt-8">
             <Outlet /> 
         </div>
       </main>      
     </div>
   )
 }
-
-
