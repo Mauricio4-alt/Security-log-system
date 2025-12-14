@@ -1,0 +1,84 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6; /* más aire entre líneas */
+}
+
+/* Encabezados */
+thead th {
+  border: 1px solid #000;
+  padding: 12px 14px; /* más espacio interno */
+  text-align: left;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Celdas */
+tbody td {
+  border: 1px solid #000;
+  padding: 10px 14px; /* más espacio interno */
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Filas más altas */
+tbody tr {
+  min-height: 44px;
+}
+
+/* Ajuste general */
+th,
+td {
+  box-sizing: border-box;
+  letter-spacing: 0.3px; /* separa ligeramente las letras */
+}
+
+/* Evita texto amontonado */
+td {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Opcional: mejor lectura en tablas grandes */
+tbody tr td {
+  line-height: 1.7;
+}
+.boton-func {
+  background-color: #0f2a44; /* azul marino */
+  color: #c9a44c; /* dorado */
+  border: 1px solid #c9a44c;
+  padding: 10px 18px;
+  margin-right: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover */
+.boton-func:hover {
+  background-color: #c9a44c;
+  color: #0b1c2d;
+}
+
+/* Click */
+.boton-func:active {
+  transform: scale(0.97);
+}
+
+/* Focus (accesibilidad) */
+.boton-func:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(201, 164, 76, 0.6);
+}
+
+/* =========================
+   OPCIONAL: separación
+========================= */
+button.boton-func {
+  margin-top: 10px;
+}

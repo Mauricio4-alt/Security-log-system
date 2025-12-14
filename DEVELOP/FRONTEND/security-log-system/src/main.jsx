@@ -11,6 +11,7 @@ import ListaRegistros from "./listaRegistros";
 import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 import MyAppNavAdmin from "./navAdmin";
+import Funcionarios from "./Funcionarios";
 
 const root = document.getElementById("root");
 
@@ -31,6 +32,8 @@ ReactDOM.createRoot(root).render(
       {/* RUTAS ADMIN */}
       <Route path="/admin" element={<MyAppNavAdmin />} >
         <Route index element={<WelcomeMessageAdmin />} />
+        <Route path="funcionarios" element={<Funcionarios />} />
+        <Route path="lista-registros" element={<ListaRegistros />} />
       </Route>
 
     </Routes>
