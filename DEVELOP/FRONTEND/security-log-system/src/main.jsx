@@ -12,6 +12,7 @@ import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 import MyAppNavAdmin from "./navAdmin";
 import Funcionarios from "./Funcionarios";
+import SavePassword from "./savepassword";
 
 const root = document.getElementById("root");
 
@@ -21,6 +22,7 @@ ReactDOM.createRoot(root).render(
 
       {/* RUTA PRINCIPAL LOGIN*/}
       <Route path="/" element={<Login />} />
+      <Route path="/save-password" element={<SavePassword />} />
 
       {/* RUTAS CELADOR */}
       <Route path="/security" element={<MyAppNav />} >
