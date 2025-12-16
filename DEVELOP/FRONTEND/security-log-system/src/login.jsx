@@ -84,7 +84,7 @@ export default function Login() {
         {/* Enlace Olvidó contraseña? */}
         <div className="mt-8 text-center">
           <a
-            href="/recuperar-contrasena" // Define la ruta a la vista de recuperación de contraseña
+            href="/save-password" // Define la ruta a la vista de recuperación de contraseña
             className="text-sm text-gray-500 hover:text-blue-600 hover:underline transition duration-150 focus:outline-none"
             aria-label="Enlace a la página de recuperación de contraseña"
           >
