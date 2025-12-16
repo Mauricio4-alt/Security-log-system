@@ -33,8 +33,6 @@ const MenuItem = ({ iconUrl, title, to, onClick }) => (
         src={iconUrl}
         alt={`Icono de ${title}`}
         className="w-12 h-12 md:w-12 md:h-12 rounded-md"
-        // Manejo de error de carga de imagen
-        onError={(e) => { e.target.onerror = null; e.target.src=ICON_URLS.errorFallback; e.target.alt="Error de Carga"; }} 
       />
     </div>
     
@@ -91,13 +89,13 @@ export default function MyAppNav() {
           </h1>
 
           {/* Botón Cerrar Sesión (simulado) */}
-          <a
+          <Link
             href="/cerrar-sesion"
             className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
             aria-label="Cerrar Sesión"
           >
             Cerrar Sesión
-          </a>
+          </Link>
         </div>
       </header>
 

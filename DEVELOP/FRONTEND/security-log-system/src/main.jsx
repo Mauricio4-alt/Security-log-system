@@ -12,7 +12,7 @@ import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 import MyAppNavAdmin from "./navAdmin";
 import Funcionarios from "./Funcionarios";
-import SavePassword from "./savepassword";
+import SavePassword from "./savePassword";
 
 const root = document.getElementById("root");
 
