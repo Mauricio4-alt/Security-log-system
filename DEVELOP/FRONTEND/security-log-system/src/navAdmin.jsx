@@ -82,13 +82,13 @@ export default function MyAppNavAdmin() {
           </h1>
 
           {/* Botón Cerrar Sesión (simulado) */}
-          <Link
+          <a
             href="/"
             className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
             aria-label="Cerrar Sesión"
           >
             Cerrar Sesión
-          </Link>
+          </a>
         </div>
       </header>
 
