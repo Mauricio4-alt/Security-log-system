@@ -1,1 +1,1 @@
-[Diagrama De Despliegue S.L.S](https://fureeedi.github.io/DiagramaDeDespliegue/)
+[Diagrama de despliegye](https://fureeedi.github.io/DiagramaDeDespliegue//)

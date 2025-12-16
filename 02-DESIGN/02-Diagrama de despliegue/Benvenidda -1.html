@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contenedor {
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 18px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(2, 100, 248, 0.2);
+        }
+        button, select  {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            border-radius: 8px;
+            background: rgb(2, 100, 248, 0.2);
+            border: 1px solid #000000;
+        }
+        input {
+            width: 100%;      
+            box-sizing: border-box;
+            font-size: 16px;
+            border-radius: 8px;
+            background: rgb(2, 100, 248, 0.2);
+            border: 1px solid #000000;
+            margin: 8px 0;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        #formulario {
+            margin-top: 12px;
+            display: none;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>BIENVENIDO</h1>
+    <h2>¿Que operacion desea hacer?</h2>
+
+    <select id="opcion" onchange="mostrarFormulario()">
+        <option value="">Seleccione una operación</option>
+        <option value="suma">1: Suma</option>
+        <option value="resta">2: Resta</option>
+        <option value="multi">3: Multiplicación</option>
+        <option value="divi">4: División</option>
+    </select>
+
+    <div id="formulario">
+        <input id="num1" type="number" placeholder="Ingrese el primer número" >
+        <input id="num2" type="number" placeholder="Ingrese el segundo número">
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <p id="resultado"></p>
+</div>
+
+<script>
+function mostrarFormulario() {
+    let opcion = document.getElementById("opcion").value;
+
+    if (opcion !== "") {
+        document.getElementById("formulario").style.display = "block";
+    } else {
+        document.getElementById("formulario").style.display = "none";
+    }
+
+    document.getElementById("resultado").textContent = "";
+}
+
+function calcular() {
+    let op = document.getElementById("opcion").value;
+    let x = Number(document.getElementById("num1").value);
+    let n = Number(document.getElementById("num2").value);
+    let r = 0;
+
+    if (op === "suma") {
+        r = x + n;
+        document.getElementById("resultado").textContent = `${x} + ${n} = ${r}`;
+    }
+    else if (op === "resta") {
+        r = x - n;
+        document.getElementById("resultado").textContent = `${x} - ${n} = ${r}`;
+    }
+    else if (op === "multi") {
+        r = x * n;
+        document.getElementById("resultado").textContent = `${x} * ${n} = ${r}`;
+    }
+    else if (op === "divi") {
+        if (n === 0) {
+            document.getElementById("resultado").textContent = "Error: División entre 0";
+            return;
+        }
+        r = x / n;
+        document.getElementById("resultado").textContent = `${x} / ${n} = ${r}`;
+    }
+}
+</script>
+
+</body>
+</html>
