@@ -45,7 +45,7 @@ export default function MyAppNavAdmin() {
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
     { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Celadores', Link ,to: '/admin' },
-    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Celadores', Link ,to: '/admin' },
+    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Celadores', Link ,to: '/admin/Funcionarios' },
   ];
 
   const toggleMenu = () => {
@@ -136,7 +136,7 @@ export default function MyAppNavAdmin() {
           ))}
         </div>
       </nav>
-      <main className="p-40 max-w-7xl mx-auto"> 
+      <main className="p-40 max-w-7x1"> 
         {/* Contenedor para el contenido principal del mensaje principal*/}
         <div className="mt-8">
             <Outlet /> 
