@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './assets/styles/index.css';
-;
+
 // --- Datos Simulados ---
 
 const datosSimuladosRegistros = [
