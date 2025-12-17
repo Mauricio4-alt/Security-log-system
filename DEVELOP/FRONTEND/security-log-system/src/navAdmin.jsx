@@ -44,8 +44,8 @@ export default function MyAppNavAdmin() {
   
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
-    { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Celadores', Link ,to: '/admin' },
-    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Celadores', Link ,to: '/admin/Funcionarios' },
+    { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Funcionarios', Link ,to: '/admin/registros-funcionarios' },
+    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Funcionarios', Link ,to: '/admin/Funcionarios' },
   ];
 
   const toggleMenu = () => {
