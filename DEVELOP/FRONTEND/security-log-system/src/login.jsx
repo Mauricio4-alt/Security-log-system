@@ -72,19 +72,20 @@ export default function Login() {
           </div>
           
           {/* Botón Iniciar Sesión */}
-          <button
+           <button
             type="submit"
             className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-150"
             aria-label="Botón para iniciar sesión"
-          >
+          ><Link to="/security">
             Iniciar sesión
+          </Link>
           </button>
         </form>
         
         {/* Enlace Olvidó contraseña? */}
         <div className="mt-8 text-center">
           <a
-            href="/recuperar-contrasena" // Define la ruta a la vista de recuperación de contraseña
+            href="/save-password" // Define la ruta a la vista de recuperación de contraseña
             className="text-sm text-gray-500 hover:text-blue-600 hover:underline transition duration-150 focus:outline-none"
             aria-label="Enlace a la página de recuperación de contraseña"
           >

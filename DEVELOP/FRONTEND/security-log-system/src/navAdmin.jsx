@@ -44,8 +44,10 @@ export default function MyAppNavAdmin() {
   
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
+
     { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Celadores', Link ,to: '/admin' },
     { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Celadores', Link ,to: '/admin/Funcionarios' },
+
   ];
 
   const toggleMenu = () => {
@@ -83,7 +85,7 @@ export default function MyAppNavAdmin() {
 
           {/* Botón Cerrar Sesión (simulado) */}
           <a
-            href="/cerrar-sesion"
+            href="/"
             className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
             aria-label="Cerrar Sesión"
           >
