@@ -29,7 +29,7 @@ const ComponenteListaRegistros = ({ registros }) => {
 
     return (
         <div className="p-8">
-            <div className="max-w-7xl">
+            <div className="max-w-7xl mx-auto">
                 {/* Encabezado y Acciones */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-6">
                     <h1 className="text-3xl font-extrabold text-gray-900 flex items-center">
@@ -41,6 +41,10 @@ const ComponenteListaRegistros = ({ registros }) => {
                             placeholder="Buscar por serial o nombre"
                             className="w-full p-2 text-center border border-gray-300 rounded-lg shadow-sm"
                         />
+                        <button
+                            className="">
+
+                        </button>
                     </div>
                 </div>
 
@@ -56,9 +60,9 @@ const ComponenteListaRegistros = ({ registros }) => {
                                 ))}
                             </tr>
                         </thead>
-                        <tbody className="bg-white divide-y divide-gray-100">
+                        <tbody className="bg-white divide-y divide-gray-200">
                             {registros.map((registro) => (
-                                <tr className="hover:bg-blue-50/50 transition duration-100">
+                                <tr className="hover:bg-blue-50 transition duration-100">
                                     <td className="px-4 py-3 whitespace-nowrap">{registro.marcaEquipo}</td>
                                     <td className="px-4 py-3 whitespace-nowrap">{registro.color}</td>
                                     <td className="px-4 py-3 font-mono text-gray-900 whitespace-nowrap">{registro.serial}</td>
@@ -77,6 +81,16 @@ const ComponenteListaRegistros = ({ registros }) => {
                         </tbody>
                     </table>
                 </div>
+
+                <div className="flex justify-end pt-3">
+                    <button 
+                        type="button" 
+                        className="py-2 px-4 rounded-lg font-semibold text-white bg-lime-700 hover:bg-lime-800 transition duration-150" 
+                        onClick={()=> alert("Se genero la minuta correctamente")}> 
+                        Generar minuta
+                    </button>  
+                </div>                
+
             </div>
         </div>
     );
