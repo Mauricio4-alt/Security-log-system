@@ -1,7 +1,7 @@
 import "./assets/styles/index.css"
 export default function SavePassword() {
   return (
-    <div className="flex justify-center p-30">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 sm:p-10 rounded-xl shadow-2xl w-full max-w-md space-y-6 border border-gray-200">
         <h2 className="text-3xl font-extrabold text-blue-700 text-center">
           Restablece tu contraseña
