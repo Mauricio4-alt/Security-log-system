@@ -19,7 +19,6 @@ const ICON_URLS = {
 
 // === Componente de Enlace del Menú Lateral (Ahora usa URL de imagen) ===
 // Define la estructura de cada opción del menú
-// Se modificó para recibir 'iconUrl' en lugar de 'icon: Icon'
 const MenuItem = ({ iconUrl, title, to, onClick }) => (
   <Link
     to={to}
@@ -51,8 +50,8 @@ export default function MyAppNav() {
   const menuItems = [
     { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
     { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
-    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/consultar-registro' },
-    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/historial' },
+    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/security/consulta-registro' },
+    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/security/consulta-historial' },
   ];
 
   const toggleMenu = () => {
@@ -77,7 +76,7 @@ export default function MyAppNav() {
           {/* Botón MENÚ */}
           <button
             onClick={toggleMenu}
-            className="px-4 py-2 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 shadow-md uppercase text-sm md:text-base"
+            className="p-2.5 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 uppercase text-sm md:text-base"
             aria-label="Toggle Menu"
           >
             MENÚ
@@ -91,7 +90,7 @@ export default function MyAppNav() {
           {/* Botón Cerrar Sesión (simulado) */}
           <Link
             href="/cerrar-sesion"
-            className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
+            className="p-2.5 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 upercase"
             aria-label="Cerrar Sesión"
           >
             Cerrar Sesión
