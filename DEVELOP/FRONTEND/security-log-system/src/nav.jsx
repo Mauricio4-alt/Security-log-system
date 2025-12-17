@@ -51,8 +51,8 @@ export default function MyAppNav() {
 
   { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', to: '/security/registro-ingreso' },
   { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', to: '/security/lista-registros' },
-  { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', to: '/consultar-registro' },
-  { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', to: '/historial' },
+  { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', to: '/security/consulta-registro' },
+  { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', to: '/security/consulta-historial' },
 ];
 
 
