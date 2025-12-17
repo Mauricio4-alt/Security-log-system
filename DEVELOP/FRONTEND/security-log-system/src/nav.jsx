@@ -48,20 +48,14 @@ export default function MyAppNav() {
   
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
-<<<<<<< HEAD
-    { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
-    { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
-    { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/security/consulta-registro' },
-    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/security/consulta-historial' },
-  ];
-=======
+
   { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', to: '/security/registro-ingreso' },
   { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', to: '/security/lista-registros' },
   { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', to: '/consultar-registro' },
   { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', to: '/historial' },
 ];
 
->>>>>>> MAURICIO
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -97,15 +91,7 @@ export default function MyAppNav() {
           </h1>
 
           {/* Botón Cerrar Sesión (simulado) */}
-<<<<<<< HEAD
-          <Link
-            href="/cerrar-sesion"
-            className="p-2.5 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 upercase"
-            aria-label="Cerrar Sesión"
-          >
-            Cerrar Sesión
-          </Link>
-=======
+
 
     <Link
       to="/"
@@ -115,7 +101,7 @@ export default function MyAppNav() {
       Cerrar Sesión
     </Link>
 
->>>>>>> MAURICIO
+
         </div>
       </header>
 
