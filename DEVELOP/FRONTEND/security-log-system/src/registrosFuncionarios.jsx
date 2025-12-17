@@ -67,6 +67,16 @@ const ListaRegistrosFuncionarios = ({ registrosFuncionarios }) => {
                         </tbody>
                     </table>
                 </div>
+
+                <div className="flex justify-end pt-3">
+                    <button 
+                        type="button" 
+                        className="py-2 px-4 rounded-lg font-semibold text-white bg-blue-700 hover:bg-blue-800 transition duration-150" 
+                        onClick={()=> alert("Se genero el informe correctamente")}> 
+                        Generar informe
+                    </button>  
+                </div>                
+            
             </div>
         </div>
     );

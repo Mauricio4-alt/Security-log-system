@@ -81,6 +81,16 @@ const ComponenteListaRegistros = ({ registros }) => {
                         </tbody>
                     </table>
                 </div>
+
+                <div className="flex justify-end pt-3">
+                    <button 
+                        type="button" 
+                        className="py-2 px-4 rounded-lg font-semibold text-white bg-lime-700 hover:bg-lime-800 transition duration-150" 
+                        onClick={()=> alert("Se genero la minuta correctamente")}> 
+                        Generar minuta
+                    </button>  
+                </div>                
+
             </div>
         </div>
     );

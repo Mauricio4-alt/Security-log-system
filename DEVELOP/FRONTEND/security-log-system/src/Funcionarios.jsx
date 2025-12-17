@@ -81,7 +81,7 @@ export default function Funcionarios() {
 
     <div className="flex flex-col sm:flex-row gap-4 justify-end">
       <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-red-700 hover:bg-red-800 transition duration-150" onClick={()=> alert("Se elimino el registro")}> Eliminar cuenta</button>      
-      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-indigo-700 hover:bg-indigo-800 transition duration-150" onClick={()=> alert("Se actualizó el registro")}>Actualizar cuenta</button>
+      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-blue-700 hover:bg-blue-800 transition duration-150" onClick={()=> alert("Se actualizó el registro")}>Actualizar cuenta</button>
       <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-lime-700 hover:bg-lime-800 transition duration-150" onClick={()=> alert("Se elimino el registro")}> Agregar cuenta</button>  
     </div>
   </div>
