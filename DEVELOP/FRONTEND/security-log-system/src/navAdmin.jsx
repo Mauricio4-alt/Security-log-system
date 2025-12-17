@@ -4,8 +4,9 @@ import { Outlet, Link } from "react-router-dom";
 
 const ICON_URLS = {
     // Menú Lateral (URLs de Placeholders en lugar de SVG)
-    registrosCeladores: 'https://cdn-icons-png.flaticon.com/512/2921/2921788.png',     // Registrar Ingreso
-    gestionCuentas: 'https://cdn-icons-png.flaticon.com/512/5510/5510047.png',       // Lista de Registros
+    registrosCeladores: 'https://cdn-icons-png.flaticon.com/512/2921/2921788.png', 
+    gestionCuentas: 'https://cdn-icons-png.flaticon.com/512/5510/5510047.png',
+    historial: 'https://cdn-icons-png.flaticon.com/512/2921/2921317.png',      
 
     // Icono para cerrar el menú (X) - Se mantiene como SVG para la UI
     close: () => (
@@ -46,6 +47,7 @@ export default function MyAppNavAdmin() {
   const menuItems = [
     { iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Funcionarios', Link ,to: '/admin/registros-funcionarios' },
     { iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Funcionarios', Link ,to: '/admin/Funcionarios' },
+    { iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/admin/consulta-historial' },
   ];
 
   const toggleMenu = () => {

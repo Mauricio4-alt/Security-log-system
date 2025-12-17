@@ -42,6 +42,7 @@ ReactDOM.createRoot(root).render(
         <Route path="funcionarios" element={<Funcionarios />} />
         <Route path="lista-registros" element={<ListaRegistros />} />
         <Route path="registros-funcionarios" element={<RegistrosFuncionarios />} />
+        <Route path="consulta-historial" element={<ConsultaHistorial />} />
       </Route>
 
     </Routes>
