@@ -44,8 +44,8 @@ export default function MyAppNavAdmin() {
   
   // 2. Usamos las URLs definidas en ICON_URLS para el array de items
   const menuItems = [
-    { id: 1, iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Funcionarios', Link ,to: '/admin/registros-funcionarios' },
-    { id: 2, iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Funcionarios', Link ,to: '/admin/Funcionarios' },
+    { iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Funcionarios', Link ,to: '/admin/registros-funcionarios' },
+    { iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Funcionarios', Link ,to: '/admin/Funcionarios' },
   ];
 
   const toggleMenu = () => {
@@ -70,7 +70,7 @@ export default function MyAppNavAdmin() {
           {/* Botón MENÚ */}
           <button
             onClick={toggleMenu}
-            className="px-4 py-2 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 shadow-md uppercase text-sm md:text-base"
+            className="p-2.5 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 uppercase text-sm md:text-base"
             aria-label="Toggle Menu"
           >
             MENÚ
@@ -84,7 +84,7 @@ export default function MyAppNavAdmin() {
           {/* Botón Cerrar Sesión (simulado) */}
           <a
             href="/cerrar-sesion"
-            className="px-3 py-2 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 shadow-md text-sm md:text-base whitespace-nowrap"
+            className="p-2.5 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 text-sm md:text-base whitespace-nowrap"
             aria-label="Cerrar Sesión"
           >
             Cerrar Sesión
@@ -136,9 +136,9 @@ export default function MyAppNavAdmin() {
           ))}
         </div>
       </nav>
-      <main className="p-40 max-w-7x1"> 
+      <main> 
         {/* Contenedor para el contenido principal del mensaje principal*/}
-        <div className="mt-8">
+        <div className="mt-20">
             <Outlet /> 
         </div>
       </main>      
