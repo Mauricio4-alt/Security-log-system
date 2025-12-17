@@ -9,9 +9,7 @@ const ICON_URLS = {
     historial: 'https://cdn-icons-png.flaticon.com/512/2921/2921317.png',      
 
     // Icono para cerrar el menú (X) - Se mantiene como SVG para la UI
-    close: () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    ),
+
 };
 
 const MenuItem = ({ iconUrl, title, to, onClick }) => (
@@ -27,8 +25,6 @@ const MenuItem = ({ iconUrl, title, to, onClick }) => (
         src={iconUrl}
         alt={`Icono de ${title}`}
         className="w-12 h-12 md:w-12 md:h-12 rounded-md"
-        // Manejo de error de carga de imagen
-        onError={(e) => { e.target.onerror = null; e.target.src=ICON_URLS.errorFallback; e.target.alt="Error de Carga"; }} 
       />
     </div>
     
@@ -59,9 +55,6 @@ export default function MyAppNavAdmin() {
     setIsMenuOpen(false);
   };
 
-  // 3. Obtenemos el componente SVG de cerrar para usarlo directamente
-  const CloseIcon = ICON_URLS.close;
-
   return (
     <div className="min-h-screen bg-gray-50">
       
@@ -72,8 +65,7 @@ export default function MyAppNavAdmin() {
           {/* Botón MENÚ */}
           <button
             onClick={toggleMenu}
-            className="p-2.5 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 uppercase text-sm md:text-base"
-            aria-label="Toggle Menu"
+            className="p-2.5 border-2 border-gray-300 rounded-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 uppercase"
           >
             MENÚ
           </button>
@@ -84,13 +76,12 @@ export default function MyAppNavAdmin() {
           </h1>
 
           {/* Botón Cerrar Sesión (simulado) */}
-          <a
-            href="/cerrar-sesion"
-            className="p-2.5 border-2 border-red-500 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150 text-sm md:text-base whitespace-nowrap"
-            aria-label="Cerrar Sesión"
+          <Link
+            to="/"
+            className="p-2.5 border-2 border-slate-500 rounded-lg font-semibold text-white bg-slate-600 hover:bg-slate-700 transition duration-150 text-sm md:text-base whitespace-nowrap"
           >
             Cerrar Sesión
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -101,27 +92,18 @@ export default function MyAppNavAdmin() {
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"
           onClick={toggleMenu}
-          aria-hidden="true"
         ></div>
       )}
 
       {/* Contenedor del Menú Deslizable */}
       <nav
-        className={`fixed top-0 left-0 h-full w-full max-w-xs bg-gray-100 p-6 z-30 shadow-xl overflow-y-auto transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-full max-w-xs bg-gray-100 p-6 z-30 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } md:max-w-sm`}
-        aria-modal="true"
-        role="dialog"
       >
         <div className="flex justify-between items-center mb-10">
           <h2 className="text-2xl font-bold text-gray-800 uppercase">MENÚ</h2>
-          <button 
-            onClick={toggleMenu}
-            className="p-2 text-gray-600 hover:text-gray-900 rounded-full hover:bg-gray-200 transition"
-            aria-label="Cerrar Menú"
-          >
-            <CloseIcon className="w-6 h-6" />
-          </button>
+
         </div>
 
         {/* Opciones del Menú */}
