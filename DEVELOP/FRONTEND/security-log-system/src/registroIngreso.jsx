@@ -86,7 +86,7 @@ export default function Registrar() {
 
     <div className="form-actions">
         <button type="submit" className="btn btn-success"
-            onClick={() => console.log(information)}
+            
         >
             Guardar
         </button>
