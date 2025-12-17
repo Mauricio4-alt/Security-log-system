@@ -11,9 +11,6 @@ export default function Login() {
   // Lógica simplificada de inicio de sesión (solo limpia campos, no muestra mensajes)
   const handleLogin = (e) => {
     e.preventDefault();
-    
-    // Aquí iría la lógica real de autenticación.
-    console.log('Intento de inicio de sesión con:', usuario, 'y contraseña oculta');
 
     // Limpiar campos después de un intento simulado
     setUsuario('');
@@ -29,8 +26,8 @@ export default function Login() {
         
         {/* Título: ¡Bienvenido! */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-extrabold text-blue-700 bg-blue-100 inline-block px-6 py-2 rounded-lg shadow-inner border-2 border-blue-500 tracking-wider uppercase">
-            ¡Bienvenido!
+          <h1 className="text-3xl font-extrabold text-white bg-blue-900 inline-block px-9 py-3 rounded-lg border-2 uppercase">
+            Bienvenido
           </h1>
         </div>
         
@@ -49,7 +46,6 @@ export default function Login() {
               onChange={(e) => setUsuario(e.target.value)}
               className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-150 shadow-sm"
               placeholder="Ingresa tu nombre de usuario"
-              aria-label="Campo de usuario"
               required // Hace que el campo sea obligatorio
             />
           </div>
@@ -74,7 +70,7 @@ export default function Login() {
           {/* Botón Iniciar Sesión */}
           <button
             type="submit"
-            className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-150"
+            className="w-full py-3 text-white bg-blue-700 font-bold rounded-lg hover:bg-blue-800 transition duration-150"
             aria-label="Botón para iniciar sesión"
           >
             Iniciar sesión
@@ -83,13 +79,12 @@ export default function Login() {
         
         {/* Enlace Olvidó contraseña? */}
         <div className="mt-8 text-center">
-          <a
-            href="/recuperar-contrasena" // Define la ruta a la vista de recuperación de contraseña
-            className="text-sm text-gray-500 hover:text-blue-600 hover:underline transition duration-150 focus:outline-none"
-            aria-label="Enlace a la página de recuperación de contraseña"
+          <Link
+            to="save-password"
+            className="text-sm text-gray-500 hover:text-blue-900 transition duration-150"
           >
             ¿Olvidó contraseña?
-          </a>
+          </Link>
         </div>
 
       </div>
