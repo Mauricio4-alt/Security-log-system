@@ -45,7 +45,7 @@ export default function MyAppNavAdmin() {
     { iconUrl: ICON_URLS.registrosCeladores, title: 'Registros Funcionarios', Link ,to: '/admin/registros-funcionarios' },
     { iconUrl: ICON_URLS.gestionCuentas, title: 'Gestión de cuentas Funcionarios', Link ,to: '/admin/Funcionarios' },
     { iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/admin/consulta-historial' },
- FREDDY
+ 
   ];
 
   const toggleMenu = () => {
@@ -82,7 +82,7 @@ export default function MyAppNavAdmin() {
           <Link
             to="/"
             className="p-2.5 border-2 border-slate-500 rounded-lg font-semibold text-white bg-slate-600 hover:bg-slate-700 transition duration-150 text-sm md:text-base whitespace-nowrap"
-> FREDDY
+> 
           
             Cerrar Sesión
           </Link>
