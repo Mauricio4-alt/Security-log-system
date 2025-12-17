@@ -9,6 +9,7 @@ import WelcomeMessage from "./welcomeMessageCelador";
 import Login from "./login";
 import ListaRegistros from "./listaRegistros";
 import ConsultaRegistro from "./consultaRegistro";
+import ConsultaHistorial from "./consultaHistorial";
 import Registrar from "./registroIngreso";       // <-- IMPORTANTE
 import WelcomeMessageAdmin from "./welcomeMessageAdmin";
 import MyAppNavAdmin from "./navAdmin";
@@ -31,6 +32,7 @@ ReactDOM.createRoot(root).render(
         <Route path="registro-ingreso" element={<Registrar />} />
         <Route path="lista-registros" element={<ListaRegistros />} />
         <Route path="consulta-registro" element={<ConsultaRegistro />} />
+        <Route path="consulta-historial" element={<ConsultaHistorial />} />
       </Route>
 
       {/* RUTAS ADMIN */}

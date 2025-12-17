@@ -51,7 +51,7 @@ export default function MyAppNav() {
     { id: 1, iconUrl: ICON_URLS.registro, title: 'Registrar Ingreso de Equipo', Link ,to: '/security/registro-ingreso' },
     { id: 2, iconUrl: ICON_URLS.lista, title: 'Lista de Registros', Link, to: '/security/lista-registros' },
     { id: 3, iconUrl: ICON_URLS.consulta, title: 'Consultar Registro de un Equipo', Link, to: '/security/consulta-registro' },
-    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/security/historial' },
+    { id: 4, iconUrl: ICON_URLS.historial, title: 'Historial de Entradas y Salidas', Link, to: '/security/consulta-historial' },
   ];
 
   const toggleMenu = () => {
