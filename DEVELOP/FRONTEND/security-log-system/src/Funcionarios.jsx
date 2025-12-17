@@ -46,7 +46,7 @@ export default function Funcionarios() {
   ];
 
   return (<>
-  <div className="max-w-7x1 mx-auto">
+  <div className="max-w-7x1 mx-auto p-8">
     <h1 className="text-3xl font-extrabold text-gray-900 mb-6">Lista de Funcionarios</h1>
     <div className="rounded-xl shadow-2xl overflow-x-auto border border-gray-200 mb-8">
       <table className="min-w-full divide-y divide-gray-200">
@@ -54,7 +54,7 @@ export default function Funcionarios() {
           <tr>
             {cabeceras.map(cabecera => (
               <th key={cabecera} 
-                className="bg-blue-700 px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wider whitespace-nowrap">
+                className="bg-green-700 px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wider whitespace-nowrap">
                 {cabecera}
               </th>
             ))}
@@ -79,9 +79,10 @@ export default function Funcionarios() {
       </table>
     </div>
 
-    <div className="flex flex-col sm:flex-row gap-4 justify-end">      
-      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition duration-150" onClick={()=> alert("Se actualizó el registro")}>actualizar cuenta</button>
-      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-red-600 hover:bg-red-700 transition duration-150" onClick={()=> alert("Se elimino el registro")}> eliminar cuenta</button>
+    <div className="flex flex-col sm:flex-row gap-4 justify-end">
+      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-red-700 hover:bg-red-800 transition duration-150" onClick={()=> alert("Se elimino el registro")}> Eliminar cuenta</button>      
+      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-blue-700 hover:bg-blue-800 transition duration-150" onClick={()=> alert("Se actualizó el registro")}>Actualizar cuenta</button>
+      <button type="button" className="py-2 px-4 rounded-lg font-semibold text-white bg-lime-700 hover:bg-lime-800 transition duration-150" onClick={()=> alert("Se elimino el registro")}> Agregar cuenta</button>  
     </div>
   </div>
   </>
